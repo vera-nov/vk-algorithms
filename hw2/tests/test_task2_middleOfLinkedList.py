@@ -85,7 +85,6 @@ def test_middle_node_is_existing_node_in_list():
     mid = middleNode(head)
     assert mid is not None
 
-    # returned node must be one of the existing nodes (no new allocations)
     assert id(mid) in ids_before
 
 
@@ -99,7 +98,6 @@ def test_list_structure_not_modified():
     mid = middleNode(head)
     assert mid is not None
 
-    # ensure original list is unchanged
     assert to_list(head) == vals_before
     assert collect_node_ids(head) == ids_before
 
@@ -110,5 +108,4 @@ def test_no_cycle_created():
     mid = middleNode(head)
     assert mid is not None
 
-    # to_list will raise if a cycle exists
     assert to_list(head) == values
